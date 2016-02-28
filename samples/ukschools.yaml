@@ -1,0 +1,21 @@
+# the base URL for the MapRoulette server API to call
+server: http://dev.maproulette.org/api/
+
+# server API admin credentials
+username: devuser
+password: mylittlesony
+
+# source file or URL
+source_url: https://gist.githubusercontent.com/anonymous/5d4f818122f4ea7aa8c7/raw/8596b7d80327ed64eea1cf98965af6ac4bad4cf0/map.geojson
+# source_file: ....
+
+# source geojson property key to use as your task identifier (optional, will use random UUID if not given)
+# identifier_property = ...
+
+# Challenge metadata, see https://gist.github.com/mvexel/b5ad1cb0c91ac245ea3f for background
+slug: ukschools
+title: UK schools
+instruction: >
+  Please match this school to one existing in OSM and add the appropriate attributes
+help: >
+  Please match this school to one existing in OSM and add the appropriate attributes
