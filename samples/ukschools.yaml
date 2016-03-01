@@ -1,12 +1,27 @@
 # the base URL for the MapRoulette server API to call
-server: http://dev.maproulette.org/api/
+server: http://dev.maproulette.org/api
+#server: "http://localhost:5000/api"
+#server: http://maproulette.org/api
 
 # server API admin credentials
-username: devuser
+user: devuser
 password: mylittlesony
 
-# source file or URL
-source_url: https://gist.githubusercontent.com/anonymous/5d4f818122f4ea7aa8c7/raw/8596b7d80327ed64eea1cf98965af6ac4bad4cf0/map.geojson
+# source file or URL. You can give a list of URLs too, all data will be gathered and added to the same challenge.
+source_url:
+  - "https://gist.githubusercontent.com/mvexel/bcdce17ef165d8360854/raw/ead41efb9edcfcf3738277de435af3a53a95f856/missing-schools-np.geojson"
+  - "https://gist.githubusercontent.com/mvexel/bcdce17ef165d8360854/raw/ead41efb9edcfcf3738277de435af3a53a95f856/missing-schools-np.geojson"
+  - "https://gist.githubusercontent.com/mvexel/f22449cc940196644900/raw/ec2e0e55684a0a7ad8f6c091605b203240d35484/missing-schools-cf.geojson"
+  - "https://gist.githubusercontent.com/mvexel/25a2e0476530df68231f/raw/16976a38fb757d593d6a268d1ddf628356e666c9/missing-schools-sa.geojson"
+  - "https://gist.githubusercontent.com/mvexel/baef534886e6bfbac377/raw/c21893debd2fd786f45ea8dfcc3f6f51d84324fa/missing-schools-ld.geojson"
+  - "https://gist.githubusercontent.com/mvexel/90890dbe33c60f00b0c6/raw/a12832c69d78616986d076e4dfce439dc3f0fe5a/missing-schools-sy.geojson"
+  - "https://gist.githubusercontent.com/mvexel/31014aa8a87f61cc5b4c/raw/74b194e1f71af3d745aa43eec5065ebf24690d6b/missing-schools-tf.geojson"
+  - "https://gist.githubusercontent.com/mvexel/93ad372edc1e6cf3a296/raw/f33a9bca364a112718c60de7a24f16bb171a56a9/missing-schools-ol.geojson%250Amissing-schools-ol.geojson"
+  - "https://gist.githubusercontent.com/mvexel/e77553faadb4b1c4f67e/raw/61b76f11ffabb2e52610b6f147316907b059a15d/missing-schools-m.geojson"
+  - "https://gist.githubusercontent.com/mvexel/2afd758abb8b529d9508/raw/62fcb65cf5f8e0d1065a7e150cf6585dfc3db9bb/missing-schools-bl.geojson"
+  - "https://gist.githubusercontent.com/mvexel/3c7382ce630e7b5fec13/raw/145c4a246ba9cb2185b420e1c3300e1586957a7e/missing-schools-wn.geojson"
+  - "https://gist.githubusercontent.com/mvexel/975e64532cb5edf2ad28/raw/8d8e466493a3415300f24b0e05460c9f5f240f5c/missing-schools-pr.geojson"
+  - "https://gist.githubusercontent.com/mvexel/eadb5475677e304d63a4/raw/987aee89ef16a1752806767290bcfb35d70542de/missing-schools-bb.geojson"
 # source_file: ....
 
 # source geojson property key to use as your task identifier (optional, will use random UUID if not given)
@@ -15,7 +30,12 @@ source_url: https://gist.githubusercontent.com/anonymous/5d4f818122f4ea7aa8c7/ra
 # Challenge metadata, see https://gist.github.com/mvexel/b5ad1cb0c91ac245ea3f for background
 slug: ukschools
 title: UK schools
-instruction: >
-  Please match this school to one existing in OSM and add the appropriate attributes
-help: >
-  Please match this school to one existing in OSM and add the appropriate attributes
+instruction: See task
+help: "Official school data has been compared to schools that exist in OSM. Many schools from the official data could not be matched. You are asked to help out adding these schools to OSM."
+
+# task level instruction, can include {} as placeholders to be expanded by an equal number of properties from the GeoJSON file
+task_instruction:
+  text: "A school **{}** exists at this location with post code **{}**. It appears this school is not on OSM yet. Please add it."
+  properties:
+    - name
+    - postcode
