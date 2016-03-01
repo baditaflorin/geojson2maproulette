@@ -1,0 +1,28 @@
+# the base URL for the MapRoulette server API to call
+#server: http://dev.maproulette.org/api
+server: "http://localhost:5000/api"
+#server: http://maproulette.org/api
+
+# server API admin credentials. Can be anything if you're testing on localhost.
+user: devuser
+password: mylittlesony
+
+# source file or URL. You can give a list of URLs too, all data will be gathered and added to the same challenge.
+source_url: "https://gist.githubusercontent.com/anonymous/a4d96f67274524d58127/raw/4fc1a8cba29897e4c0d407e1a5269020607be896/overpass.geojson"
+# source_file: ....
+
+# source geojson property key to use as your task identifier (optional, will use random UUID if not given)
+# identifier_property = ...
+
+# Challenge metadata, see https://gist.github.com/mvexel/b5ad1cb0c91ac245ea3f for background
+slug: cork_multilingualnames
+title: Places without Gaelic names in Cork
+instruction: See task
+help: "Many `place` nodes in Ireland have only a `name` but not the corresponding `name:ga` representing the Gaelic name. Please help complete the multilingual map of Ireland by adding these names if you know them."
+
+# task level instruction, can include {} as placeholders to be expanded by an equal number of properties from the GeoJSON file
+task_instruction:
+  text: "The is place has a `name` tag **{}** but no `name:ga` tag for the Gaelic name. If you know it, please add it. Or perhaps [Google knows](https://www.google.ie/?q={}+gaelic)?"
+  properties:
+    - name
+    - name

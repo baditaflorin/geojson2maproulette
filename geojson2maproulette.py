@@ -23,6 +23,7 @@ from maproulette import MapRouletteTaskCollection, MapRouletteTask, MapRouletteC
 from docopt import docopt
 import requests
 from uuid import uuid4
+import re
 
 if __name__ == "__main__":
 
@@ -65,6 +66,11 @@ if __name__ == "__main__":
 			else:
 				task_identifier = str(uuid4())
 			t = MapRouletteTask(task_identifier)
+			# try to get OSM ID from overpass exported GeoJSON
+			if "@id" in f['properties']:
+				match = re.match(r"\w+/(\d+)", f['properties']['@id'])
+				osmid = match.group(1)
+				f['properties']['osmid'] = osmid
 			if config.get('task_instruction'):
 				ti = config.get('task_instruction')
 				replacements = [f['properties'].get(key) for key in ti.get('properties')]
@@ -99,6 +105,6 @@ if __name__ == "__main__":
 			print('Done!')
 	else:
 		print("Writing {} tasks...".format(len(tc.tasks)))
-		print(c.as_payload())
-		print(tc.as_payload())
+		#print(c.as_payload())
+		#print(tc.as_payload())
 	pass
