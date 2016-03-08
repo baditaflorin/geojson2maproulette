@@ -1,6 +1,6 @@
 # the base URL for the MapRoulette server API to call
-#server: http://dev.maproulette.org/api
-server: "http://localhost:5000/api"
+server: http://dev.maproulette.org/api
+#server: "http://localhost:5000/api"
 #server: http://maproulette.org/api
 
 # server API admin credentials. Can be anything if you're testing on localhost.
