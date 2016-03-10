@@ -104,7 +104,8 @@ if __name__ == "__main__":
 			tc.create(server)
 			print('Done!')
 	else:
-		print("Writing {} tasks...".format(len(tc.tasks)))
-		#print(c.as_payload())
-		#print(tc.as_payload())
+		print("// challenge json:")
+		print(c.as_payload())
+		print("// tasks json:")
+		print(tc.as_payload())
 	pass

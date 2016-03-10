@@ -1,0 +1,28 @@
+# the base URL for the MapRoulette server API to call
+server: http://dev.maproulette.org/api
+#server: "http://localhost:5000/api"
+#server: http://maproulette.org/api
+
+# server API admin credentials
+user: devuser
+password: mylittlesony
+
+# source file or URL. You can give a list of URLs too, all data will be gathered and added to the same challenge.
+source_url: https://gist.githubusercontent.com/anonymous/310005dc1dcf08f5c4a7/raw/74aa0d6a845a20511d0c450d715dab23d2a6c0d6/overpass.geojson
+# source_file: ....
+
+# source geojson property key to use as your task identifier (optional, will use random UUID if not given)
+# identifier_property = ...
+
+# Challenge metadata, see https://gist.github.com/mvexel/b5ad1cb0c91ac245ea3f for background
+slug: sidewalks-sarasota
+title: Add sidewalks to major roads in Sarasota
+instruction: This way has no `sidewalk` tag. Usually you can see from the aerial imagery if there is a sidewalk or not. Please add the appropriate `sidewalk` tagging.
+help: "Help make OSM be a better resource for safe, walkable streets! Many primary and secondary roads in the US are not safe for pedestrians if there is no sidewalk. This challenge highlights all `primary` and `secondary` ways that have no [`sidewalk`](https://wiki.openstreetmap.org/wiki/Key:sidewalk) tagging whatsoever. You can help by looking at aerial imagery and adding the appropriate `sidewalk` tagging. `sidewalk=none` is just as important to have as the 'positive' values. Thanks for helping make OSM better!"
+
+# task level instruction, can include {} as placeholders to be expanded by an equal number of properties from the GeoJSON file
+# task_instruction:
+#   text: "A school **{}** exists at this location with post code **{}**. It appears this school is not on OSM yet. Please add it."
+#   properties:
+#     - name
+#     - postcode
