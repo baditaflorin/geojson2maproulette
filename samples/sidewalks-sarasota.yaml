@@ -18,7 +18,7 @@ source_url: https://gist.githubusercontent.com/anonymous/310005dc1dcf08f5c4a7/ra
 slug: sidewalks-sarasota
 title: Add sidewalks to major roads in Sarasota
 instruction: This way has no `sidewalk` tag. Usually you can see from the aerial imagery if there is a sidewalk or not. Please add the appropriate `sidewalk` tagging.
-help: "Help make OSM be a better resource for safe, walkable streets! Many primary and secondary roads in the US are not safe for pedestrians if there is no sidewalk. This challenge highlights all `primary` and `secondary` ways that have no [`sidewalk`](https://wiki.openstreetmap.org/wiki/Key:sidewalk) tagging whatsoever. You can help by looking at aerial imagery and adding the appropriate `sidewalk` tagging. `sidewalk=none` is just as important to have as the 'positive' values. Thanks for helping make OSM better!"
+help: "Help make OSM be a better resource for safe, walkable streets! Many primary and secondary roads in the US are not safe for pedestrians if there is no sidewalk. This challenge highlights all `primary` and `secondary` ways that have no [`sidewalk`](https://wiki.openstreetmap.org/wiki/Key:sidewalk) tagging whatsoever. You can help by looking at aerial imagery and adding the appropriate `sidewalk` tagging. `sidewalk=no` is just as important to have as the 'positive' values. Thanks for helping make OSM better!"
 
 # task level instruction, can include {} as placeholders to be expanded by an equal number of properties from the GeoJSON file
 # task_instruction:
