@@ -10,7 +10,7 @@ Create a MapRoulette challenge from a GeoJSON file or gist with little effort!
 
 ## Usage
 
-Let me explain how this works with an example. OSM user `bitnapper` proposed a challenge for adding multilingual names to places in Ireland a while ago. If I understand her or his request correctly, these are OSM `place` nodes that have a `name` tag but perhaps not a `name:ga` tag for the Gaelic name. (I am making the assumption that `name` will always hold the English name. That may not be accurate.) These nodes can be isolated with an Overpass Turbo query [like so](http://overpass-turbo.eu/s/eHY): 
+Let me explain how this works with an example. OSM user `bitnapper` proposed a challenge for adding multilingual names to places in Ireland a while ago. If I understand her or his request correctly, these are OSM `place` nodes that have a `name` tag but perhaps not a `name:ga` tag for the Irish name. (`name` will hold the local name, which is nearly always the English name.) These nodes can be isolated with an Overpass Turbo query [like so](http://overpass-turbo.eu/s/eHY): 
 
 <a data-flickr-embed="true"  href="https://www.flickr.com/photos/rhodes/25368276726/" title="Untitled"><img src="https://farm2.staticflickr.com/1560/25368276726_90a2b0417f_z.jpg" width="640" height="185" alt="Untitled"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
