@@ -8,7 +8,7 @@ geojson2maproulette will look at the properties of each GeoJSON feature for the 
 All configuration is read from a YAML file. See the samples for guidance.
 
 Usage:
-geojson2maproulette.py CONFIG_FILE [[--post] --activate]
+geojson2maproulette.py CONFIG_FILE [--post [--activate]]
 
 Options:
 -h --help      Show this
