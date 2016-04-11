@@ -10,7 +10,7 @@ All configuration is read from a YAML file. See the samples for guidance.
 Special attention is given to GeoJSON that was exported from Overpass Turbo. Features from Overpass GeoJSON contain an '@id' property that will be used to generate a unique identifier for the task.
 
 Usage:
-geojson2maproulette.py CONFIG_FILE [[--post] --activate]
+geojson2maproulette.py CONFIG_FILE [--post [--activate]]
 
 Options:
 -h --help      Show this
