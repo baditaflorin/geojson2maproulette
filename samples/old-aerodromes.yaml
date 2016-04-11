@@ -1,0 +1,28 @@
+# the base URL for the MapRoulette server API to call
+server: http://dev.maproulette.org/api
+#server: "http://localhost:5000/api"
+#server: http://maproulette.org/api
+
+# server API admin credentials
+user: devuser
+password: mylittlesony
+
+# source file or URL. You can give a list of URLs too, all data will be gathered and added to the same challenge.
+# source_url: https://gist.githubusercontent.com/anonymous/310005dc1dcf08f5c4a7/raw/74aa0d6a845a20511d0c450d715dab23d2a6c0d6/overpass.geojson
+source_file: /Users/mvexel/dev/old-aerodromes/Vermont.geojson
+
+# source geojson property key to use as your task identifier (optional, will use random UUID if not given)
+# identifier_property: '@id'
+
+# Challenge metadata, see https://gist.github.com/mvexel/b5ad1cb0c91ac245ea3f for background
+slug: old-aerodromes-vermont
+title: Old Aerodromes in Vermont
+instruction: This is an `aerodrome` node that has not been looked at in at least three years. Please check if there is an airport or airfield there. If there is nothing, you can delete the node. If the `aerodrome` exists, why not map the runway, apron, hangars etc.? Thanks!
+help: "Many `aerodrome` nodes in the U.S. were imported from a number of sources. Not all these nodes represent existing airfields or airports. This challenge shows all `aerodrome` nodes that have not been touched since January 2013. The objective is to get rid of all `aerodrome` nodes that do not point to an existing airfield or airport, and update the ones that do exist with more detailed data and the correct location."
+
+# task level instruction, can include {} as placeholders to be expanded by an equal number of properties from the GeoJSON file
+# task_instruction:
+#   text: "A school **{}** exists at this location with post code **{}**. It appears this school is not on OSM yet. Please add it."
+#   properties:
+#     - name
+#     - postcode

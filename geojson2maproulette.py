@@ -7,6 +7,8 @@ This converts GeoJSON to a MapRoulette Challenge. It can read from a local file 
 geojson2maproulette will look at the properties of each GeoJSON feature for the fields mr_identifier and mr_instruction and will use those as your tasks' identifiers and instructions. The Task-level instructions will override those at the Challenge level. If the mr_identifier property is not found in your GeoJSON feature's properties, a standard UUID will be generated and used as task identifier.
 All configuration is read from a YAML file. See the samples for guidance.
 
+Special attention is given to GeoJSON that was exported from Overpass Turbo. Features from Overpass GeoJSON contain an '@id' property that will be used to generate a unique identifier for the task.
+
 Usage:
 geojson2maproulette.py CONFIG_FILE [[--post] --activate]
 
@@ -48,7 +50,7 @@ if __name__ == "__main__":
 			task_batch.append(r.json())
 	else:
 		geojson_file = open(config.get('source_file'))
-		task_batch.append(json.loads(geojson_file))
+		task_batch.append(json.loads(geojson_file.read()))
 
 	c = MapRouletteChallenge(slug=config.get("slug"), title=config.get("title"))
 	if config.get('instruction'):
@@ -63,6 +65,10 @@ if __name__ == "__main__":
 			task_identifier = None
 			if config.get('identifier_property'):
 				task_identifier = f['properties'].get(config.get('identifier_property'))
+			elif '@id' in f['properties']:
+				task_identifier = "{prefix}-{identifier}".format(
+					prefix=config.get('slug'),
+					identifier="-".join(f['properties'].get('@id').split("/")))
 			else:
 				task_identifier = str(uuid4())
 			t = MapRouletteTask(task_identifier)
