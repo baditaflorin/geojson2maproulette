@@ -8,6 +8,9 @@ user: devuser
 password: mylittlesony
 
 # source file or URL. You can give a list of URLs too, all data will be gathered and added to the same challenge.
+# If you want to link to a file, then use the source_file: path
+# If you want to use a geojson gist repo, comment the #source_file and un-comment the source_url
+# The link should be put between parenthesis "http://thelink.com" 
 # source_url: https://gist.githubusercontent.com/anonymous/310005dc1dcf08f5c4a7/raw/74aa0d6a845a20511d0c450d715dab23d2a6c0d6/overpass.geojson
 source_file: /Users/mvexel/dev/old-aerodromes/Vermont.geojson
 
